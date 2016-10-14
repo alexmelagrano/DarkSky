@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charse
+          ="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A simple, accurate weather source for Boston.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -37,23 +38,44 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="sass/main.css">
       
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
   </head>
     
   <body ng-app="DarkSky">
-    <div ng-view>
-
-      <div ng-controller="FooterController"></div>
+      
+    <div ng-view="">
+      <!-- Header Import Location -->  
+      <header></header>
+      <!-- Main Import Location -->
+      <div>
+        <!-- User Inupt for Location Selection -->
+        <!-- Section to display results; defaults to NEU's campus -->
+        <div class="results">
+            <h1>{{ weatherData.city_name }}</h1>
+            <h5>Current Weather:</h5>
+            <p>{{ weatherData.high }}</p>
+        </div>
+      </div>
+      <!-- Footer Import Location -->
+      <foot></foot>
     </div>
       
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <!-- Modules -->
     <script src="app/app.js"></script>
-    
-    <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
-  
-    <script src="components/header/navHeader.directive.js"></script>
+      
+    <!-- Controllers -->
+    <script src="app/main/main.controller.js"></script>
     <script src="components/header/navHeader.controller.js"></script>
+    <script src="components/footer/footer.controller.js"></script> 
+      
+    <!-- Services -->
+    <script src="app/services/forecast.js"></script>
+      
+    <!-- Directives -->
+    <script src="components/header/navHeader.directive.js"></script>
+    <script src="app/main/main.directive.js"></script>
     <script src="components/footer/footer.directive.js"></script>
-    <script src="components/footer/footer.controller.js"></script>
+      
   </body>
 </html>
