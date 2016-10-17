@@ -5,18 +5,42 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: #efefef; }
+  background-color: #F2EFDF; }
 
-app-info {
-  background-color: red; }
+header {
+  background-color: #413659; }
+  header .title-container {
+    padding: 40px 20px;
+    text-align: left; }
+    header .title-container h1 {
+      font-weight: 300; }
+  header .nav-container {
+    background-color: #656F8C;
+    float: left; }
+    header .nav-container ul {
+      float: left; }
+      header .nav-container ul li {
+        line-height: 50px;
+        font-size: 18px;
+        font-weight: 300;
+        color: #F2EFDF;
+        padding: 0 20px;
+        border-right: 1px solid #8f8f8f; }
+        header .nav-container ul li:hover {
+          background-color: rgba(101, 111, 140, 0.82);
+          color: #ffffff; }
+
+.app-info {
+  background-color: transparent; }
 
 footer {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #6f6f6f;
+  background-color: #211426;
   color: #efefef;
-  height: 150px; }
+  height: 150px;
+  text-align: center; }
   footer::after {
     clear: both;
     content: "";
@@ -24,7 +48,13 @@ footer {
   footer h6 {
     font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
     font-size: 18px !important;
-    text-align: center;
     margin: auto 0; }
+  footer h5 {
+    font-style: italic;
+    font-size: 16px !important;
+    color: #cfcfcf; }
+    footer h5 a {
+      color: inherit;
+      text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

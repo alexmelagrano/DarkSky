@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charse
-          ="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A simple, accurate weather source for Boston.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -37,44 +36,38 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="sass/main.css">
-      
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+
   </head>
     
-  <body ng-app="DarkSky">
-      
-    <div ng-view="">
-      <!-- Header Import Location -->  
-      <header></header>
-      <!-- Main Import Location -->
-      <div>
-        <!-- User Inupt for Location Selection -->
-        <!-- Section to display results; defaults to NEU's campus -->
-        <div class="results">
-            <h1>{{ weatherData.city_name }}</h1>
-            <h5>Current Weather:</h5>
-            <p>{{ weatherData.high }}</p>
-        </div>
-      </div>
-      <!-- Footer Import Location -->
-      <foot></foot>
-    </div>
-      
-    <!-- Modules -->
+  <body ng-app="DarkSky" >
+
+    <!-- Header Import Location -->
+    <head></head>
+
+    <!-- Main App Info Import Location -->
+    <div ng-view=""></div>
+
+    <!-- Footer Import Location -->
+    <foot></foot>
+
+    <!-- Loading AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+
+    <!-- App -->
     <script src="app/app.js"></script>
-    <script src="app/main/main.js"></script>
-      
-    <!-- Controllers -->
+
+    <!-- Pages -->
     <script src="app/main/main.controller.js"></script>
-    <script src="components/header/navHeader.controller.js"></script>
-    <script src="components/footer/footer.controller.js"></script> 
-      
+    <script src="app/main/main.js"></script>
+
     <!-- Services -->
     <script src="app/services/forecast.js"></script>
       
     <!-- Directives -->
+    <script src="components/header/navHeader.controller.js"></script>
     <script src="components/header/navHeader.directive.js"></script>
-    <script src="app/main/main.directive.js"></script>
+    <script src="components/footer/footer.controller.js"></script>
     <script src="components/footer/footer.directive.js"></script>
       
   </body>
