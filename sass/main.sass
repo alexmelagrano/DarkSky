@@ -1,22 +1,43 @@
 @import 'layouts/layouts-dir'
 @import 'modules/modules-dir'
 @import 'plugins/plugins-dir'
+@import 'helpers/helpers'
+   
+//@mixin fontFace($family,$src,$style: normal,$weight: normal) 
+//	@font-face 
+//		font-family: $family
+//		src: url('#{$src}.woff') format('woff') // IE9 compat'), // IE8 and below
+//			url('#{$src}.woff') format('woff'), // standards
+//			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+//			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+//
+////		font-style: $style;
+////		font-weight: $weight;
+//	
+
+// TODO :: Fix font stuff
+// Font Declarations
+//@include fontface('Circular Std Bold', './fonts/CircularStd-Bold')
+//@include fontface('Circular Std Book', './fonts/CircularStd-Book')
     
+@include font-face("Circular Std Bold", "/fonts/CircularStd-Bold")
+
 body 
-    background-color: #F2EFDF
+    background-color: $white    
+    font-family: "Circular Std Bold", Helvetica, Arial, sans-serif
 
 header
-    background-color: #413659
+    background-color: $med-purple
 
     .title-container
         padding: 40px 20px
         text-align: left
 
         h1
-            font-weight: 300
+            font-family: "Circular Std Bold", "Helvetica", "Arial", sans-serif 
 
     .nav-container
-        background-color: #656F8C
+        background-color: $light-purple
         float: left
 
         ul
@@ -26,7 +47,7 @@ header
                 line-height: 50px
                 font-size: 18px
                 font-weight: 300
-                color: #F2EFDF
+                color: $white
                 padding: 0 20px
                 border-right: 1px solid #8f8f8f
                 &:hover
@@ -36,12 +57,70 @@ header
 
 
 .app-info
-    background-color: transparent
+    @include outer-container
+        
+    .location-input
+        // Later addition
+        
+    .main-results
+        max-width: 800px
+        margin: 0 auto
+        
+        h1
+            padding: 0px 0 0px 60px
+          
+            .bar 
+                font-size: 120%
+                color: $accent
+                padding: 0 0 0 60px
+                margin: 0
+                font-weight: bold
+            
+        .weather-headline
+            @include outer-container    
+            
+            h6
+                font-size: 13px
+                line-height: 20px
+                padding-top: 0
+                margin: 0
+                float: right
+            
+            .info-box
+                @include span-columns(6)
+                background-color: $accent
+                border: 2px solid tint($light-purple, .8)
+                border-radius: 4px
+                padding: 20px
+                
+                .current-temp
+                    @include span-columns(3 of 6)
+                    text-align: center
+                    border-right: 1px solid tint($light-purple, .8)
+                    padding: 20px
+                    font-size: 28px
+                    line-height: 32px
+
+
+
+                .current-precip
+                    @include span-columns(3 of 6)
+                    text-align: center
+                    padding: 20px
+                    font-size: 28px
+                    line-height: 32px
+
+
+            .current-summary
+                @include span-columns(6)
+                font-size: 24px
+                padding: 20px
+                
+                
+        
 
 footer
-    @include outer-container
-
-    background-color: #211426
+    background-color: $dark-purple
     color: #efefef
     height: 150px
     text-align: center

@@ -1,7 +1,7 @@
 <div class="app-info">
     <!-- User Inupt for Location Selection -->
     <!-- Main Import Location -->
-    <div>
+    <div class="location-input">
         <!-- User Inupt for Location Selection -->
         <!-- Section to display results; defaults to NEU's campus -->
 
@@ -9,9 +9,34 @@
 
     <!-- Section to display results; defaults to NEU's campus -->
 
-    <div class="results">
-        <h1>{{weatherData.timezone}}</h1>
-        <h5>Current Weather:</h5>
-        <p>{{weatherData.minutely.summary}}</p>
+    <div class="main-results">
+        <h1 class="bar">_</h1>
+        <h1>{{weatherData.timezone}}</h1>   
+        <div class="weather-headline">
+            <div class="info-box">
+                <div class="current-temp">
+                    <h3>{{ weatherData.currently.temperature }}&deg;</h3>
+                    <h6>Current temp</h6>
+                </div>
+                <div class="current-precip">
+                    <h3>{{ weatherData.currently.precipProbability }}%</h3>
+                    <h6>Current precip %</h6>
+                </div>
+            </div>
+            <div class="current-summary">
+                <p>{{ weatherData.minutely.summary }}</p>
+            </div>
+        </div>
+        <div class="hourly-results">
+            <div class="first-hour">
+                <h5>In one hour</h5>
+                <h6>some data&deg;</h6>
+                <h6>some data%</h6>
+            </div>
+        </div>
+    </div>
+    
+    <div class="week-results">
+        
     </div>
 </div>
