@@ -5,11 +5,16 @@
 angular.module('DarkSky')
     .controller('MainController', ['$scope', 'forecast', function($scope, forecast) {
         console.log('Within main.controller, about to run forecast promise')
-        // forecast.getWeather(function (data) {
-        //     console.log(data);
-        //     $scope.weatherData = data;
-        // });
-
+        /*
+         forecast.getWeather(function (data) {
+             console.log('Retrieved data from the Dark Sky API. About to begin cleaning process.');
+             forecast.cleanData(data) {
+                console.log('Cleaned data. Final data set seen below:');
+                console.log(data);
+                $scope.weatherData = data;
+             }; 
+         });
+        */
         var sampleData = {
     "latitude": 42.3601
     , "longitude": -71.0589

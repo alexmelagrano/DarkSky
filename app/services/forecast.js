@@ -20,6 +20,19 @@ angular.module('DarkSky')
                     console.log('Something fucked up in the API call...');
                 });
         };
-
+        
+        /*
+        // Cleans data returned by the getWeather function
+        forecast.cleanData = function(callback) {
+            console.log('Began cleaning data.');
+            var data = {};
+            
+            // TODO : do reverse lat/long lookup?
+            data.push(location: 'Boston');
+            
+            
+        };
+        */
+        
         return forecast;
     }]);
