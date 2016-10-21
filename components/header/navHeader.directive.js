@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('DarkSky')
-    .directive('navHead', () => ({
+    .directive('asdf', () => ({
     templateUrl: 'components/header/navHeader.html',
     restrict: 'E',
     controller: 'HeaderController',

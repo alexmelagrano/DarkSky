@@ -11,30 +11,44 @@ html {
   src: url("/fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/CircularStd-Bold.woff2") format("woff2"), url("/fonts/CircularStd-Bold.woff") format("woff"), url("/fonts/CircularStd-Bold.ttf") format("truetype"), url("/fonts/CircularStd-Bold.svg#Circular Std Bold") format("svg"); }
 body {
   background-color: #F2EFDF;
-  font-family: "Circular Std Bold", Helvetica, Arial, sans-serif; }
+  font-family: "Circular Std Bold", Helvetica, Arial, sans-serif;
+  margin: 0; }
 
 header {
-  background-color: #413659; }
+  background-color: #656F8C;
+  color: #F2EFDF;
+  z-index: 9999; }
   header .title-container {
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: left; }
     header .title-container h1 {
-      font-family: "Circular Std Bold", "Helvetica", "Arial", sans-serif; }
+      font-family: "Circular Std Bold", "Helvetica", "Arial", sans-serif;
+      font-size: 34px; }
   header .nav-container {
-    background-color: #656F8C;
-    float: left; }
+    background-color: #413659;
+    float: left;
+    display: block;
+    width: 100%; }
     header .nav-container ul {
-      float: left; }
+      float: left;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      outline: none; }
       header .nav-container ul li {
         line-height: 50px;
         font-size: 18px;
         font-weight: 300;
         color: #F2EFDF;
         padding: 0 20px;
-        border-right: 1px solid #8f8f8f; }
+        background-color: #413659;
+        -webkit-transition: background-color, 0.5s, ease;
+        -moz-transition: background-color, 0.5s, ease;
+        transition: background-color, 0.5s, ease; }
         header .nav-container ul li:hover {
-          background-color: rgba(101, 111, 140, 0.82);
-          color: #ffffff; }
+          background-color: #544a6a; }
 
 .app-info {
   max-width: 1200px;
@@ -48,12 +62,13 @@ header {
     max-width: 800px;
     margin: 0 auto; }
     .app-info .main-results h1 {
-      padding: 0px 0 0px 60px; }
+      padding: 0 0 0px 60px;
+      margin: 0; }
       .app-info .main-results h1 .bar {
         font-size: 120%;
         color: #9BBFAB;
-        padding: 0 0 0 60px;
-        margin: 0;
+        padding: 0 0 0 60px !important;
+        margin-bottom: 0 !important;
         font-weight: bold; }
     .app-info .main-results .weather-headline {
       max-width: 1200px;

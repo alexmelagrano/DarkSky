@@ -25,23 +25,35 @@
 body 
     background-color: $white    
     font-family: "Circular Std Bold", Helvetica, Arial, sans-serif
+    margin: 0
 
 header
-    background-color: $med-purple
+    background-color: $light-purple
+    color: $white
+    z-index: 9999
 
     .title-container
-        padding: 40px 20px
+        padding: 30px 20px
         text-align: left
 
         h1
             font-family: "Circular Std Bold", "Helvetica", "Arial", sans-serif 
+            font-size: 34px
 
     .nav-container
-        background-color: $light-purple
+        background-color: $med-purple
         float: left
+        display: block
+        width: 100%
 
         ul
             float: left
+            list-style: none
+            display: flex
+            flex-direction: row
+            margin: 0
+            padding: 0
+            outline: none
 
             li
                 line-height: 50px
@@ -49,10 +61,11 @@ header
                 font-weight: 300
                 color: $white
                 padding: 0 20px
-                border-right: 1px solid #8f8f8f
+                background-color: $med-purple
+                @include transition(background-color, 0.5s, ease)
+
                 &:hover
-                    background-color: rgba(101, 111, 140, 0.82)
-                    color: #ffffff
+                    background-color: tint($med-purple, 10)
 
 
 
@@ -67,13 +80,14 @@ header
         margin: 0 auto
         
         h1
-            padding: 0px 0 0px 60px
+            padding: 0 0 0px 60px
+            margin: 0
           
             .bar 
                 font-size: 120%
                 color: $accent
-                padding: 0 0 0 60px
-                margin: 0
+                padding: 0 0 0 60px !important
+                margin-bottom: 0 !important
                 font-weight: bold
             
         .weather-headline
