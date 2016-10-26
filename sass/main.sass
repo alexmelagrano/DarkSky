@@ -20,8 +20,12 @@
 //@include fontface('Circular Std Bold', './fonts/CircularStd-Bold')
 //@include fontface('Circular Std Book', './fonts/CircularStd-Book')
     
-@include font-face("Circular Std Bold", "/fonts/CircularStd-Bold")
+@include font-face("Circular Std Bold", "/fonts/CircularStd-Bold")    
+@include font-face("Avant Garde Gothic", "/fonts/Avant Garde Gothic")
 
+.clearFix
+    @include clearfix
+    
 body 
     background-color: $white    
     font-family: "Circular Std Bold", Helvetica, Arial, sans-serif
@@ -70,10 +74,10 @@ header
 
 
 .app-info
-    @include outer-container
+    @include outer-container(100%)
         
     .location-input
-        // Later addition
+        // Later addition; maybe just stick with the office toggling
         
     .main-results
         max-width: 800px
@@ -91,7 +95,8 @@ header
                 font-weight: bold
             
         .weather-headline
-            @include outer-container    
+            display: block
+            margin-bottom: 40px
             
             h6
                 font-size: 13px
@@ -102,11 +107,14 @@ header
             
             .info-box
                 @include span-columns(6)
+                
                 background-color: $accent
                 border: 2px solid tint($light-purple, .8)
                 border-radius: 4px
                 padding: 20px
-                
+                display: flex
+                flex-direction: row
+                    
                 .current-temp
                     @include span-columns(3 of 6)
                     text-align: center
@@ -114,7 +122,7 @@ header
                     padding: 20px
                     font-size: 28px
                     line-height: 32px
-
+                    display: flex
 
 
                 .current-precip
@@ -123,15 +131,48 @@ header
                     padding: 20px
                     font-size: 28px
                     line-height: 32px
-
+                    display: flex
 
             .current-summary
                 @include span-columns(6)
                 font-size: 24px
                 padding: 20px
+                display: flex
+                float: none
                 
                 
-        
+        .hourly-results
+            display: block
+            margin: 0 auto
+            float: none
+            
+            .hour
+                @include span-columns(3)
+                
+                border: 2px solid tint($light-purple, .8)
+                border-radius: 4px
+                padding: 20px
+                display: flex
+                flex-direction: column
+                
+                h5, h6
+                    display: flex
+                
+                h5
+                    font-size: 20px
+                    line-height: 24px
+                    margin: 10px 0
+                
+            .first-hour
+                background-color: $accent
+                
+            .second-hour
+                background-color: tint($accent, 25)
+                    
+            .third-hour
+                background-color: tint($accent, 50)
+
+            
 
 footer
     background-color: $dark-purple
@@ -153,3 +194,6 @@ footer
             color: inherit
             text-decoration: none
 
+@include media($tablet)
+    .info-box
+        flex-direction: row

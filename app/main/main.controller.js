@@ -14,6 +14,8 @@ angular.module('DarkSky')
                 $scope.weatherData = data;
              }; 
          });
+         
+         // something for the location shiz
         */
         var sampleData = {
     "latitude": 42.3601
@@ -1337,7 +1339,20 @@ angular.module('DarkSky')
 };
         $scope.weatherData = sampleData;
         // TODO :: use Google's Geocoding API to do an address lookup
-        //  https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
-        // $scope.location = sampleData.timezone;
+        var curLoc = 
+        location.getAddress(function (data) {
+             console.log('Retrieved location data from the Geocode API. About to begin cleaning process.');
+            
+            // not sure what's going on from here down lmao, it breaks everything
+             forecast.cleanData(data) {
+                console.log('Cleaned data. Final data set seen below:');
+                console.log(data);
+                $scope.location = data;
+             }; 
+         });
+            
+            
+        $scope.location = curLoc;
+        $scope.weatherData = sampleData;
         console.log('Just kidding, using sample data for now because CORS');
     }]);
