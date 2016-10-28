@@ -1346,13 +1346,13 @@ angular.module('DarkSky').controller('MainController', ['$scope', 'forecast', 'l
     location.getAddress(latLong, function (data) {
         console.log('Retrieved location data from the Geocode API. About to begin cleaning process.');
         // Parses the returned JSON to build the city/state format we want
-        var results = data[0];
+        var results = data.results[0];
         var city = '';
         var state = '';
         
         for (var i = 0; i < results.address_components.length; i += 1) {
-            curComponent = results.address_components[i];
-            curType = curComponent.types[0];
+            var curComponent = results.address_components[i];
+            var curType = curComponent.types[0];
             if (curType == 'locality') {
                 city = curComponent.long_name;
                 console.log('Found the city name: ' + curComponent.long_name);

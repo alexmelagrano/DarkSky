@@ -37,6 +37,7 @@ angular.module('DarkSky')
         return forecast;
     }])
 
+    // Takes a lat/long, produces a city/state
     .factory('location', ['$http', function($http) {
         var key = 'AIzaSyD1Q5lIbo9L0i3lVjnPmjHbtdeRCNvEsQ4';
 
@@ -48,10 +49,10 @@ angular.module('DarkSky')
             
             console.log('Began the Geocode API call');
             $http.get(url)
-                .success(function(loc, data) {
+                .success(function(data) {
                     console.log("Returned the location data, shown below. Starting callback.");
                     console.log(data);
-                    callback(loc, data);
+                    callback(data);
             })
                 .error(function(err) {
                     callback(err);
