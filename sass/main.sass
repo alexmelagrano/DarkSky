@@ -2,30 +2,15 @@
 @import 'modules/modules-dir'
 @import 'plugins/plugins-dir'
 @import 'helpers/helpers'
-   
-//@mixin fontFace($family,$src,$style: normal,$weight: normal) 
-//	@font-face 
-//		font-family: $family
-//		src: url('#{$src}.woff') format('woff') // IE9 compat'), // IE8 and below
-//			url('#{$src}.woff') format('woff'), // standards
-//			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
-//			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
-//
-////		font-style: $style;
-////		font-weight: $weight;
-//	
 
-// TODO :: Fix font stuff
-// Font Declarations
-//@include fontface('Circular Std Bold', './fonts/CircularStd-Bold')
-//@include fontface('Circular Std Book', './fonts/CircularStd-Book')
-    
+// Font Declarations    
 @include font-face("Circular Std Bold", "/fonts/CircularStd-Bold")    
 @include font-face("Avant Garde Gothic", "/fonts/Avant Garde Gothic")
 
 .clearFix
     @include clearfix
-    
+
+
 body 
     background-color: $white    
     font-family: "Circular Std Bold", Helvetica, Arial, sans-serif
@@ -53,8 +38,8 @@ header
         ul
             float: left
             list-style: none
-            display: flex
-            flex-direction: row
+            @include display(flex)
+            @include flex-direction(row)
             margin: 0
             padding: 0
             outline: none
@@ -82,6 +67,7 @@ header
     .main-results
         max-width: 800px
         margin: 0 auto
+        @include justify-content(center)
         
         h1
             padding: 0 0 0px 60px
@@ -95,6 +81,9 @@ header
                 font-weight: bold
             
         .weather-headline
+            @include outer-container
+            @include justify-content(center)
+                
             display: block
             margin-bottom: 40px
             
@@ -106,14 +95,16 @@ header
                 float: right
             
             .info-box
-                @include span-columns(6)
+                @include media($tablet)
+                    @include span-columns(6)
+                @include span-columns(12)
                 
                 background-color: $accent
                 border: 2px solid tint($light-purple, .8)
                 border-radius: 4px
                 padding: 20px
-                display: flex
-                flex-direction: row
+                @include display(flex)
+                @include flex-direction(row)
                     
                 .current-temp
                     @include span-columns(3 of 6)
@@ -122,7 +113,7 @@ header
                     padding: 20px
                     font-size: 28px
                     line-height: 32px
-                    display: flex
+                    @include display(flex)
 
 
                 .current-precip
@@ -131,18 +122,22 @@ header
                     padding: 20px
                     font-size: 28px
                     line-height: 32px
-                    display: flex
+                    @include display(flex)
 
             .current-summary
-                @include span-columns(6)
+                @include media($tablet)
+                    @include span-columns(6)
+                @include span-columns(12)
                 font-size: 24px
                 padding: 20px
-                display: flex
+                @include display(flex)
                 float: none
                 
                 
         .hourly-results
-            display: block
+            @include display(flex)
+            @include justify-content(center)
+                
             margin: 0 auto
             float: none
             
@@ -152,11 +147,11 @@ header
                 border: 2px solid tint($light-purple, .8)
                 border-radius: 4px
                 padding: 20px
-                display: flex
+                @include display(flex)
                 flex-direction: column
                 
                 h5, h6
-                    display: flex
+                    @include display(flex)
                 
                 h5
                     font-size: 20px
@@ -196,4 +191,4 @@ footer
 
 @include media($tablet)
     .info-box
-        flex-direction: row
+        @include flex-direction(row)
