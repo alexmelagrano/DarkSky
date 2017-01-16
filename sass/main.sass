@@ -67,18 +67,18 @@ header
     .main-results
         max-width: 800px
         margin: 0 auto
+        padding: 20px
         @include justify-content(center)
         
         h1
-            padding: 0 0 0px 60px
+            padding: 0 60px 60px
             margin: 0
           
-            .bar 
-                font-size: 120%
-                color: $accent
-                padding: 0 0 0 60px !important
-                margin-bottom: 0 !important
-                font-weight: bold
+        .bar
+            font-size: 300%
+            padding: 0 0 0 60px
+            margin-bottom: 0 !important
+            font-weight: bold
             
         .weather-headline
             @include outer-container
@@ -98,11 +98,13 @@ header
                 @include media($tablet)
                     @include span-columns(6)
                 @include span-columns(12)
-                
+
+                max-width: 380px
                 background-color: $accent
                 border: 2px solid tint($light-purple, .8)
                 border-radius: 4px
-                padding: 20px
+                margin: 0 auto
+                padding: 20px 10px
                 @include display(flex)
                 @include flex-direction(row)
                     
@@ -110,19 +112,25 @@ header
                     @include span-columns(3 of 6)
                     text-align: center
                     border-right: 1px solid tint($light-purple, .8)
-                    padding: 20px
+                    margin-right: 0%
+                    padding-right: 2.40956%
                     font-size: 28px
                     line-height: 32px
                     @include display(flex)
+                    @include flex-direction(column)
 
 
                 .current-precip
                     @include span-columns(3 of 6)
                     text-align: center
-                    padding: 20px
+                    margin-left: 2.40956%
                     font-size: 28px
                     line-height: 32px
                     @include display(flex)
+                    @include flex-direction(column)
+
+                h3
+                    margin: 15% 0 30%
 
             .current-summary
                 @include media($tablet)
@@ -135,20 +143,27 @@ header
                 
                 
         .hourly-results
+            @include flex-direction(column)
+            @include media($mobile)
+                @include flex-direction(row)
+
             @include display(flex)
             @include justify-content(center)
-                
-            margin: 0 auto
+
             float: none
             
             .hour
-                @include span-columns(3)
-                
+                @include span-columns(8)
+                @include media($mobile)
+                    @include span-columns(3)
+
+                margin: 20px auto
                 border: 2px solid tint($light-purple, .8)
                 border-radius: 4px
                 padding: 20px
+                max-width: 175px
                 @include display(flex)
-                flex-direction: column
+                @include flex-direction(column)
                 
                 h5, h6
                     @include display(flex)
@@ -192,3 +207,5 @@ footer
 @include media($tablet)
     .info-box
         @include flex-direction(row)
+
+@include media($tablet)

@@ -86,6 +86,7 @@ header {
   .app-info .main-results {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
     -webkit-box-pack: center;
     -moz-box-pack: center;
     box-pack: center;
@@ -96,14 +97,13 @@ header {
     justify-content: center;
     -ms-flex-pack: center; }
     .app-info .main-results h1 {
-      padding: 0 0 0px 60px;
+      padding: 0 60px 60px;
       margin: 0; }
-      .app-info .main-results h1 .bar {
-        font-size: 120%;
-        color: #9BBFAB;
-        padding: 0 0 0 60px !important;
-        margin-bottom: 0 !important;
-        font-weight: bold; }
+    .app-info .main-results .bar {
+      font-size: 300%;
+      padding: 0 0 0 60px;
+      margin-bottom: 0 !important;
+      font-weight: bold; }
     .app-info .main-results .weather-headline {
       max-width: 1200px;
       margin-left: auto;
@@ -134,10 +134,12 @@ header {
         display: block;
         margin-right: 2.35765%;
         width: 100%;
+        max-width: 380px;
         background-color: #9BBFAB;
         border: 2px solid #66708d;
         border-radius: 4px;
-        padding: 20px;
+        margin: 0 auto;
+        padding: 20px 10px;
         display: -webkit-box;
         display: -moz-box;
         display: box;
@@ -172,7 +174,8 @@ header {
           width: 47.58542%;
           text-align: center;
           border-right: 1px solid #66708d;
-          padding: 20px;
+          margin-right: 0%;
+          padding-right: 2.40956%;
           font-size: 28px;
           line-height: 32px;
           display: -webkit-box;
@@ -181,7 +184,17 @@ header {
           display: -webkit-flex;
           display: -moz-flex;
           display: -ms-flexbox;
-          display: flex; }
+          display: flex;
+          -webkit-box-orient: vertical;
+          -moz-box-orient: vertical;
+          box-orient: vertical;
+          -webkit-box-direction: normal;
+          -moz-box-direction: normal;
+          box-direction: normal;
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-direction: column; }
           .app-info .main-results .weather-headline .info-box .current-temp:last-child {
             margin-right: 0; }
         .app-info .main-results .weather-headline .info-box .current-precip {
@@ -190,7 +203,7 @@ header {
           margin-right: 4.82916%;
           width: 47.58542%;
           text-align: center;
-          padding: 20px;
+          margin-left: 2.40956%;
           font-size: 28px;
           line-height: 32px;
           display: -webkit-box;
@@ -199,9 +212,21 @@ header {
           display: -webkit-flex;
           display: -moz-flex;
           display: -ms-flexbox;
-          display: flex; }
+          display: flex;
+          -webkit-box-orient: vertical;
+          -moz-box-orient: vertical;
+          box-orient: vertical;
+          -webkit-box-direction: normal;
+          -moz-box-direction: normal;
+          box-direction: normal;
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-direction: column; }
           .app-info .main-results .weather-headline .info-box .current-precip:last-child {
             margin-right: 0; }
+        .app-info .main-results .weather-headline .info-box h3 {
+          margin: 15% 0 30%; }
       .app-info .main-results .weather-headline .current-summary {
         float: left;
         display: block;
@@ -228,6 +253,16 @@ header {
         .app-info .main-results .weather-headline .current-summary:last-child {
           margin-right: 0; }
     .app-info .main-results .hourly-results {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      box-orient: vertical;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-direction: column;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -244,16 +279,29 @@ header {
       -o-justify-content: center;
       justify-content: center;
       -ms-flex-pack: center;
-      margin: 0 auto;
       float: none; }
+      @media screen and (min-width: 480px) {
+        .app-info .main-results .hourly-results {
+          -webkit-box-orient: horizontal;
+          -moz-box-orient: horizontal;
+          box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -moz-box-direction: normal;
+          box-direction: normal;
+          -webkit-flex-direction: row;
+          -moz-flex-direction: row;
+          flex-direction: row;
+          -ms-flex-direction: row; } }
       .app-info .main-results .hourly-results .hour {
         float: left;
         display: block;
         margin-right: 2.35765%;
-        width: 23.23176%;
+        width: 65.88078%;
+        margin: 20px auto;
         border: 2px solid #66708d;
         border-radius: 4px;
         padding: 20px;
+        max-width: 175px;
         display: -webkit-box;
         display: -moz-box;
         display: box;
@@ -261,9 +309,26 @@ header {
         display: -moz-flex;
         display: -ms-flexbox;
         display: flex;
-        flex-direction: column; }
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        box-direction: normal;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-direction: column; }
         .app-info .main-results .hourly-results .hour:last-child {
           margin-right: 0; }
+        @media screen and (min-width: 480px) {
+          .app-info .main-results .hourly-results .hour {
+            float: left;
+            display: block;
+            margin-right: 2.35765%;
+            width: 23.23176%; }
+            .app-info .main-results .hourly-results .hour:last-child {
+              margin-right: 0; } }
         .app-info .main-results .hourly-results .hour h5, .app-info .main-results .hourly-results .hour h6 {
           display: -webkit-box;
           display: -moz-box;
