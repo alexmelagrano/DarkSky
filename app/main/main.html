@@ -50,19 +50,29 @@
     
     <div class="week-results">
         <div class="first-day day">
-            <h5>Tomorrow</h5>
+            <h5>{{ weekly[0] }}</h5>
             <h4>{{ weatherData.daily.data[0].temperatureMax }}&deg;</h4>
             <h4>{{ weatherData.daily.data[0].precipProbability }}%</h4>
         </div>
         <div class="second-day day">
-            <h5>In two days</h5>
+            <h5>{{ weekly[1] }}</h5>
             <h4>{{ weatherData.daily.data[1].temperatureMax }}&deg;</h4>
             <h4>{{ weatherData.daily.data[1].precipProbability }}%</h4>
         </div>
         <div class="third-day day">
-            <h5>In three days</h5>
+            <h5>{{ weekly[2] }}</h5>
             <h4>{{ weatherData.daily.data[2].temperatureMax }}&deg;</h4>
             <h4>{{ weatherData.daily.data[2].precipProbability }}%</h4>
+        </div>
+        <div class="fourth-day day">
+            <h5>{{ weekly[3] }}</h5>
+            <h4>{{ weatherData.daily.data[3].temperatureMax }}&deg;</h4>
+            <h4>{{ weatherData.daily.data[3].precipProbability }}%</h4>
+        </div>
+        <div class="fifth-day day">
+            <h5>{{ weekly[4] }}</h5>
+            <h4>{{ weatherData.daily.data[4].temperatureMax }}&deg;</h4>
+            <h4>{{ weatherData.daily.data[4].precipProbability }}%</h4>
         </div>
         <div class="clearFix"></div>
     </div>
