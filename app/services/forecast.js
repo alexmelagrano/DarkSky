@@ -12,16 +12,65 @@ angular.module('DarkSky')
 
         forecast.getWeather = function(callback) {
             console.log('Began the API call');
-            $http.get(url)
-                .success(function(data) {
+            // $http.get(url)
+            //     .success(function(data) {
+            //         callback(data);
+            //         console.log("Returned the Dark Sky data, seen here:");
+            //         console.log(data);
+            // })
+            //     .error(function(err) {
+            //         callback(err);
+            //         console.log('Something fucked up in the API call...');
+            //     });
+
+            $http({
+                url: url,
+                method: 'GET',
+                contentType: 'text/plain',
+                xhrFields: {
+                    withCredentials: true
+                },
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': 'http://localhost:63342'
+                },
+
+                success: function(data) {
                     callback(data);
-                    console.log("Returned the Dark Sky data, seen here:");
+                    console.log("Retrieved the Dark Sky data, seen here:");
                     console.log(data);
-            })
-                .error(function(err) {
+                },
+                error: function(err) {
                     callback(err);
-                    console.log('Something fucked up in the API call...');
-                });
+                    console.log("Something went wrong...");
+                }
+            });
+
+            // var setHeader = function(xhr) {
+            //     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            // }
+            //
+            // $.ajax({
+            //     type: 'GET',
+            //     url: url,
+            //     contentType: 'text/plain',
+            //     xhrFields: {
+            //         withCredentials: true
+            //     },
+            //     beforeSend: setHeader,
+            //
+            //     success: function(data) {
+            //         callback(data);
+            //         console.log("Retrieved the Dark Sky data, seen here:");
+            //         console.log(data);
+            //     },
+            //     error: function(err) {
+            //         callback(err);
+            //         console.log("Something went wrong...");
+            //     }
+            // });
+
+
         };
         
         /*
