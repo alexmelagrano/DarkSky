@@ -8,11 +8,11 @@ angular.module('DarkSky')
 
         // URL includes a proxy redirect to take care of necessary CORS headers
         var proxy = 'https://thingproxy.freeboard.io/fetch/';
-        var apiKey = 'bba29aa08f46e69f7aacf2e2183a5b48'
-        var latLong = '42.3601,-71.0589';
+        var apiKey = [API_KEY];  // as a string
+        var lat = [LATITUDE];    // as an integer
+        var long = [LONGITUDE];  // as an integer
 
-        var url = proxy + 'https://api.darksky.net/forecast/' + apiKey + '/' + latLong;
-
+        var url = proxy + 'https://api.darksky.net/forecast/' + apiKey + '/' + lat + ',' + long;
         var forecast = {};
 
         forecast.getWeather = function(callback) {
