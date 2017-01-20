@@ -1,0 +1,42 @@
+@import "../plugins/bourbon/bourbon"
+@import "../helpers/helpers"
+
+header
+    background-color: $light-purple
+    color: $white
+    z-index: 9999
+
+    .title-container
+        padding: 30px 20px
+        text-align: left
+
+        h1
+            font-family: "Circular Std Bold", "Helvetica", "Arial", sans-serif
+            font-size: 34px
+
+    .nav-container
+        background-color: $med-purple
+        float: left
+        display: block
+        width: 100%
+
+        ul
+            float: left
+            list-style: none
+            @include display(flex)
+            @include flex-direction(row)
+            margin: 0
+            padding: 0
+            outline: none
+
+            li
+                line-height: 50px
+                font-size: 18px
+                font-weight: 300
+                color: $white
+                padding: 0 20px
+                background-color: $med-purple
+                @include transition(background-color, 0.5s, ease)
+
+                &:hover
+                    background-color: tint($med-purple, 10)

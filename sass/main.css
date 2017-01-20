@@ -1,28 +1,21 @@
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-@font-face {
-  font-family: "Circular Std Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/CircularStd-Bold.woff2") format("woff2"), url("/fonts/CircularStd-Bold.woff") format("woff"), url("/fonts/CircularStd-Bold.ttf") format("truetype"), url("/fonts/CircularStd-Bold.svg#Circular Std Bold") format("svg"); }
-@font-face {
-  font-family: "Avant Garde Gothic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/fonts/Avant Garde Gothic.eot?#iefix") format("embedded-opentype"), url("/fonts/Avant Garde Gothic.woff2") format("woff2"), url("/fonts/Avant Garde Gothic.woff") format("woff"), url("/fonts/Avant Garde Gothic.ttf") format("truetype"), url("/fonts/Avant Garde Gothic.svg#Avant Garde Gothic") format("svg"); }
-.clearFix::after {
-  clear: both;
-  content: "";
-  display: block; }
-
-body {
-  background-color: #F2EFDF;
-  font-family: "Circular Std Bold", Helvetica, Arial, sans-serif;
-  margin: 0; }
+footer {
+  background-color: #211426;
+  color: #efefef;
+  height: 150px;
+  padding: 40px;
+  margin-top: 120px;
+  text-align: center;
+  color: #9f9f9f; }
+  footer h6 {
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 18px !important;
+    margin: auto 0; }
+  footer h5 {
+    font-style: italic;
+    font-size: 16px !important; }
+    footer h5 a {
+      color: inherit;
+      text-decoration: none; }
 
 header {
   background-color: #656F8C;
@@ -75,6 +68,32 @@ header {
         header .nav-container ul li:hover {
           background-color: #544a6a; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: "Circular Std Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/CircularStd-Bold.woff") format("woff"); }
+@font-face {
+  font-family: "Avant Garde Gothic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Avant Garde Gothic.woff") format("woff"); }
+.clearFix::after {
+  clear: both;
+  content: "";
+  display: block; }
+
+body {
+  background-color: #F2EFDF;
+  font-family: "Circular Std Bold", Helvetica, Arial, sans-serif;
+  margin: 0; }
+
 .app-info {
   max-width: 100%;
   margin-left: auto;
@@ -101,7 +120,7 @@ header {
       margin: 0; }
     .app-info .main-results .bar {
       font-size: 300%;
-      padding: 0 0 0 60px;
+      padding: 60px 0 0 60px;
       margin-bottom: 0 !important;
       font-weight: bold; }
     .app-info .main-results .weather-headline {
@@ -402,25 +421,6 @@ header {
           padding: 0 25px; } }
       .app-info .week-results .day:last-child {
         margin-right: 0; }
-
-footer {
-  background-color: #211426;
-  color: #efefef;
-  height: 150px;
-  padding: 40px;
-  margin-top: 120px;
-  text-align: center;
-  color: #9f9f9f; }
-  footer h6 {
-    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-    font-size: 18px !important;
-    margin: auto 0; }
-  footer h5 {
-    font-style: italic;
-    font-size: 16px !important; }
-    footer h5 a {
-      color: inherit;
-      text-decoration: none; }
 
 @media screen and (min-width: 480px) {
   .info-box {
