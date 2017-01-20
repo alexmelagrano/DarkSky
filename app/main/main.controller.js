@@ -8,6 +8,8 @@ angular.module('DarkSky').controller('MainController', ['$scope', 'forecast', 'l
         console.log('Retrieved data from the Dark Sky API');
         console.log(data);
 
+        $scope.weatherData = data;
+
         // TODO :: use Google's Geocoding API to do an address lookup
         var latLong = {
             lat: data.latitude,
@@ -17,6 +19,9 @@ angular.module('DarkSky').controller('MainController', ['$scope', 'forecast', 'l
         console.log('Looking for the location at this latitude:' + data.latitude);
         console.log('Looking for the location at this longitude:' + data.longitude);
 
+        // Nest the service calls to keep it async
+        // TODO :: refactor these into promises
+        // TODO :: even better, make the GET requests in tandem to use more bandwidth/increase load speed
         location.getAddress(latLong, function (data) {
             console.log('Retrieved location data from the Geocode API. About to begin cleaning process.');
             // Parses the returned JSON to build the city/state format we want
@@ -48,9 +53,16 @@ angular.module('DarkSky').controller('MainController', ['$scope', 'forecast', 'l
             var tomorrow = new Date(data.daily.data[0].time * 1000).getDay();
 
             var days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+
             var forecast = [];
+            var cur = tomorrow;
             for(var i = tomorrow; i < tomorrow + 5; i += 1){
-                forecast.push(days[i % 5]);
+                // Acts as a modulo function for the day selection
+                if (cur == 7) {
+                    cur = 0;
+                };
+                forecast.push(days[cur]);
+                cur += 1;
             }
 
             $scope.weekly = forecast;
